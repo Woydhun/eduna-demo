@@ -664,10 +664,10 @@ function CategoryPageInner() {
     <div className="min-h-screen bg-background text-foreground">
       <TopBar />
       <SiteHeader />
-      <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-3 py-4 sm:px-6 sm:py-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav aria-label="Navigáció" className="mb-6">
-          <ol className="flex flex-wrap items-center gap-1.5 text-sm text-muted-foreground">
+        <nav aria-label="Navigáció" className="mb-4 sm:mb-6">
+          <ol className="flex flex-wrap items-center gap-1 text-xs sm:gap-1.5 sm:text-sm text-muted-foreground">
             <li className="inline-flex items-center gap-1.5">
               <Link to="/" className="transition-colors hover:text-foreground">
                 Főoldal
@@ -698,7 +698,7 @@ function CategoryPageInner() {
           </ol>
         </nav>
 
-        <div className="flex gap-8">
+        <div className="flex gap-4 lg:gap-8">
           {/* ============ Desktop Sidebar ============ */}
           <aside className="hidden lg:block" style={{ width: 240, minWidth: 240, maxWidth: 240 }}>
             <div className="sticky top-24 max-h-[calc(100vh-7rem)] overflow-hidden rounded-xl border border-border bg-surface/40">
@@ -723,7 +723,7 @@ function CategoryPageInner() {
             </div>
 
             {/* Toolbar: count + sort + mobile filter button */}
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-xl border border-border bg-surface/60 px-4 py-2.5">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2 rounded-xl border border-border bg-surface/60 px-3 py-2 sm:gap-3 sm:px-4 sm:py-2.5">
               <div className="flex items-center gap-3">
                 {/* Mobile filter trigger */}
                 <Button
@@ -750,7 +750,7 @@ function CategoryPageInner() {
                 <select
                   value={sort}
                   onChange={(e) => setSort(e.target.value as SortOption)}
-                  className="rounded-md border border-border bg-transparent px-2 py-1 text-sm text-foreground outline-none focus:ring-2 focus:ring-primary/25"
+                  className="max-w-[10rem] truncate rounded-md border border-border bg-transparent px-2 py-1 text-xs text-foreground outline-none focus:ring-2 focus:ring-primary/25 sm:max-w-none sm:text-sm"
                 >
                   {SORT_OPTIONS.map((o) => (
                     <option key={o.value} value={o.value}>

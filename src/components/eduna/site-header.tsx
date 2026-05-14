@@ -37,6 +37,7 @@ export function SiteHeader() {
   } = useEdunaDemo();
 
   const [navValue, setNavValue] = React.useState("");
+  const [mobileSearchOpen, setMobileSearchOpen] = React.useState(false);
   const location = useRouterState({ select: (s) => s.location.pathname });
 
   React.useEffect(() => {
@@ -93,6 +94,17 @@ export function SiteHeader() {
             </div>
           </form>
 
+          <Button
+            type="button"
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            aria-label="Keresés"
+            onClick={() => setMobileSearchOpen((v) => !v)}
+          >
+            <Search className="h-5 w-5" />
+          </Button>
+
           <div className="flex shrink-0 items-center gap-0.5 sm:gap-1">
             <ThemeToggle />
             <Button
@@ -141,6 +153,30 @@ export function SiteHeader() {
             </Button>
           </div>
         </div>
+
+        {mobileSearchOpen && (
+          <form
+            className="border-t border-border/60 py-2 md:hidden"
+            onSubmit={(e) => {
+              onSearchSubmit(e);
+              setMobileSearchOpen(false);
+            }}
+            role="search"
+          >
+            <div className="relative">
+              <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                name="q"
+                placeholder="Keresés a webáruházban…"
+                className="h-10 w-full rounded-xl border border-border bg-surface/90 py-2 pl-10 pr-4 text-sm text-foreground placeholder:text-muted-foreground transition-interactive focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/25"
+                aria-label="Keresés"
+                autoFocus
+              />
+            </div>
+          </form>
+        )}
 
         <nav
           className="hidden w-full min-w-0 border-t border-border/60 py-1.5 lg:block lg:overflow-visible"

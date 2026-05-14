@@ -1,6 +1,7 @@
 "use client";
 
 import { Trash2 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -106,22 +107,14 @@ export function EdunaModals() {
                     <ul className="space-y-0.5 pl-1">
                       {g.items.map((it) => (
                         <li key={it.label}>
-                          <button
-                            type="button"
-                            className="w-full rounded-lg px-3 py-2 text-left text-sm text-foreground/90 transition-interactive hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-                            onClick={() => {
-                              if (it.anchor) {
-                                const id = it.anchor.replace(/^#/, "");
-                                document
-                                  .getElementById(id)
-                                  ?.scrollIntoView({ block: "start", behavior: "smooth" });
-                              }
-                              setMobileOpen(false);
-                              toast.message(it.label);
-                            }}
+                          <Link
+                            to="/category/$categorySlug"
+                            params={{ categorySlug: it.slug }}
+                            className="block w-full rounded-lg px-3 py-2 text-left text-sm text-foreground/90 transition-interactive hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                            onClick={() => setMobileOpen(false)}
                           >
                             {it.label}
-                          </button>
+                          </Link>
                         </li>
                       ))}
                     </ul>

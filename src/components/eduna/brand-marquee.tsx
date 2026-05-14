@@ -8,7 +8,7 @@ import imgPhone from "@/assets/products/phone.jpg";
 export function BrandMarquee() {
   const row = [...BRAND_LOGOS, ...BRAND_LOGOS];
   return (
-    <section className="border-b border-border bg-brand-strip py-8" aria-labelledby="brands-heading">
+    <section className="overflow-hidden border-b border-border bg-brand-strip py-8" aria-labelledby="brands-heading">
       <h2
         id="brands-heading"
         className="mb-4 text-center text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground"

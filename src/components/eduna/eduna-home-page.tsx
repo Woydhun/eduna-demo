@@ -19,7 +19,7 @@ import { EdunaModals } from "./eduna-modals";
 export function EdunaHomePage() {
   return (
     <EdunaDemoProvider>
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
         <a
           href="#katalogus"
           className="absolute left-[-9999px] top-4 z-[100] rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow focus:left-4 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"

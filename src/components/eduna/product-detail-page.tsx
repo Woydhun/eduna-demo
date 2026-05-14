@@ -170,7 +170,7 @@ function ProductDetailInner() {
 
   if (!product) {
     return (
-      <div className="min-h-screen bg-background text-foreground">
+      <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
         <TopBar />
         <SiteHeader />
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-4 py-24 text-center">
@@ -199,7 +199,7 @@ function ProductDetailInner() {
   const related = ALL_DEMO_PRODUCTS.filter((x) => x.id !== p.id).slice(0, 4);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <TopBar />
       <SiteHeader />
       <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">

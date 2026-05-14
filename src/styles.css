@@ -179,6 +179,7 @@
     color: var(--foreground);
     font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   a[href]:not([aria-disabled="true"]) {
     cursor: pointer;

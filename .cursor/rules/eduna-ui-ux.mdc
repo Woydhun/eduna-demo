@@ -1,0 +1,19 @@
+---
+description: eDuna demo UI/UX contract (UI UX Pro Max aligned)
+globs:
+  - src/**/*.tsx
+  - src/**/*.css
+alwaysApply: false
+---
+
+# eDuna UI rules
+
+Before changing **layout, color, motion, or a11y** in this repo:
+
+1. Read **[design-system/MASTER.md](design-system/MASTER.md)** and follow its tokens and checklist.
+2. If **design-system/pages/<page>.md** exists for the page you are editing, treat it as an override on top of MASTER.
+3. Prefer editing **`src/styles.css`** semantic tokens over sprinkling one-off hex colors in components.
+4. For new interactive elements: use **`Button`** / shadcn primitives when possible; otherwise add **`cursor-pointer`**, **`focus-visible:ring-2`** + **`ring-offset`**, and **`transition-interactive`** (or equivalent duration).
+5. Do not remove **`prefers-reduced-motion`** handling from global CSS when adjusting animations.
+
+Optional: install the upstream skill with `uipro init --ai cursor` (see MASTER.md).
